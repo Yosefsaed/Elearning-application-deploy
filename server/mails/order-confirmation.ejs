@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+      .message-sm {
+        text-align: center;
+      }
+      .course-info {
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      .first-td {
+        width: 60%;
+      }
+      .second-td {
+        width: 20%;
+      }
+      .table-row {
+        margin-top: 10px;
+      }
+      .col-2 {
+        width: 60%;
+        text-align: right;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="message-sm">
+        <h1>Your order is confirmed</h1>
+        <p>and we're just as excited as you are.</p>
+      </div>
+      <div class="course-info">
+        <h4>Here's your order:</h4>
+        <table>
+          <tr>
+            <td>Order #:</td>
+            <td><%= order._id %></td>
+          </tr>
+          <tr>
+            <td>Order Date:</td>
+            <td><%= order.date %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td class="first-td">Item</td>
+            <td class="first-td">Qty</td>
+            <td class="first-td">Cost</td>
+          </tr>
+          <tr>
+            <td class="second-td"><%= order.name %></td>
+            <td class="second-td">1</td>
+            <td class="second-td">E£<%= order.price %></td>
+          </tr>
+        </table>
+        <table class="table-row">
+          <tr>
+            <td class="col-2">Subtotal:</td>
+            <td class="col-2">E£<%= order.price %></td>
+          </tr>
+        </table>
+        <table class="table-row">
+          <tr>
+            <td class="col-2">Total:</td>
+            <td class="col-2">E£<%= order.price %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="footer">
+        <p>If you have any questions, please contact our support team</p>
+        <p>&copy; 2024 Elearning. All rights reserved</p>
+      </div>
+    </div>
+  </body>
+</html>
